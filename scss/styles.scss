@@ -1,0 +1,114 @@
+// Override Bootstrap's Sass default variables
+
+
+
+// Customize some defaults
+$custom-radio-color: #b3ff00; // Change this to your desired color
+$custom-radio-focus-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); // Customize as needed
+$custom-radio-active-color: #8c0a0a; // Customize as needed
+
+// Custom styles for radio buttons
+
+
+
+$body-color: #333;
+$body-bg: #fff;
+$border-radius: 16px;
+$border-color: #D8E2E7;
+$success: #7952b3;
+$primary: #345FF6;
+
+$box-shdow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+
+$theme-colors: (
+    "primary": $primary,
+);
+
+// Required
+@import "bootstrap/scss/functions";
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+
+// Custom styles
+@import "icon-list";
+@import "typography";
+@import "header";
+
+.custom-radio {
+    .custom-control-input {
+        &:checked~.custom-control-label::before {
+            border-color: $custom-radio-color;
+            background-color: $custom-radio-color;
+        }
+
+        &:focus~.custom-control-label::before {
+            box-shadow: $custom-radio-focus-box-shadow;
+        }
+    }
+
+    .custom-control-label::before {
+        border-radius: 50%;
+        border-width: 2px; // Adjust border width if needed
+    }
+
+    .custom-control-input:active~.custom-control-label::before {
+        background-color: $custom-radio-active-color;
+    }
+}
+
+.bmi-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.8em 1.5em;
+    border-radius: $border-radius;
+    box-shadow: $box-shdow;
+    background-color: #fff;
+}
+
+body {
+    padding: 0 0.5rem;
+
+}

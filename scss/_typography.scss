@@ -1,0 +1,73 @@
+// font family
+$font-family-sans-serif: 'inter', Arial, sans-serif;
+
+// font weights
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// heading sizes
+$headings-font-family: $font-family-sans-serif;
+$heading-size-xl: 4rem; // 64px
+$heading-size-lg: 3rem; // 48px
+$heading-size-md: 1.5rem; // 24px
+$heading-size-sm: 1.25rem; // 20px
+
+// font sizes
+$font-size-lg: 1.25rem; // 20px
+$font-size-base: 1rem; // 16px
+$font-size-base-bold: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+
+// line heights
+$body-line-height: 150%;
+$heading-line-height: 110%;
+
+
+// font colors
+$font-primary-color: #253347;
+$font-secondary-color: #5E6E85;
+
+// defin heading mixin 
+@mixin heading-style($size) {
+    font-weight: $font-semibold;
+    letter-spacing: -0.05em;
+    font-size: $size;
+    line-height: $heading-line-height
+}
+
+.heading-xl {
+    @include heading-style($heading-size-xl);
+}
+
+.heading-lg {
+    @include heading-style($heading-size-lg);
+}
+
+.heading-md {
+    @include heading-style($heading-size-md);
+}
+
+.heading-sm {
+    @include heading-style($heading-size-sm);
+}
+
+@mixin font-body-style($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $body-line-height;
+}
+
+.body-md {
+    @include font-body-style($font-size-base, $font-regular);
+}
+
+.body-md-semibold {
+    @include font-body-style($font-size-base, $font-semibold);
+}
+
+.body-sm {
+    @include font-body-style($font-size-sm, $font-regular);
+}

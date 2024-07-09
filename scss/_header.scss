@@ -1,0 +1,79 @@
+@import "typography";
+
+.header {
+
+    .section-1 {
+        height: max-content;
+    }
+
+    .section-2 {
+        color: $font-primary-color ;
+    }
+
+    .header-rectangle {
+        z-index: -1;
+        top: 0;
+    }
+
+    .bmi-form-container {
+        display: flex;
+        padding: 1.8em 1.5em;
+        border-radius: $border-radius;
+        box-shadow: $box-shdow;
+        background-color: #fff;
+
+        .custom-label {
+            color: $font-secondary-color;
+            padding-bottom: 0.5em;
+            font-size: $font-size-sm;
+        }
+
+        .form-control {
+            border-right: none;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            &:hover {
+
+                input,
+                .input-group-text {
+                    border: 1px solid $primary;
+                    cursor: pointer;
+                    transition: 0ms;
+                }
+            }
+
+            input {
+                color: $font-primary-color;
+                font-size: $heading-size-md;
+                font-weight: $font-semibold;
+                border-radius: $border-radius;
+                padding: 0.6em;
+                padding-left: 0.8em;
+            }
+        }
+
+        .input-group-text {
+            border-left: none;
+            background: none;
+            color: $primary;
+            font-size: $heading-size-md;
+            font-weight: $font-semibold;
+        }
+
+        .resulte-container {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            border-radius: 16px 100px 100px 16px;
+            padding: 1em;
+            background: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
+            color: #fff;
+        }
+    }
+}
