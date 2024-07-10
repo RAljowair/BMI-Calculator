@@ -147,7 +147,11 @@
                     </div>
                   </div>
                 </div>
-                <div hidden class="resulte-container">
+                <div
+                  
+                  class="resulte-container d-flex flex-col row row-cols-1"
+                >
+                <div id="welcome-msg">
                   <p class="heading-md">Welcome!</p>
                   <p class="font-body-md">
                     Enter your height and weight and you’ll see your BMI result
@@ -155,20 +159,16 @@
                   </p>
                 </div>
                 <div
-                  class="resulte-container row row-cols-1 row-cols-lg-2 d-flex flex-row"
+                  id="result-msg"
+                  class="row row-cols-1 row-cols-md-2 d-none d-flex flex-row"
                 >
                   <div class="col">
-                    <p class="body-md-semibold">Your BMI is...</p>
+                    <p id="user-msg" class="body-md-semibold">Your BMI is...</p>
                     <p id="bmiResult" class="heading-xl"></p>
+                    <p id="bmiResult2" class="heading-md"></p>
                   </div>
-                  <p class="col">
-                    Your BMI suggests you’re a healthy weight. Your ideal weight
-                    is between 63.3kgs - 85.2kgs.
-                  </p>
+                  <p class="col heading-sm d-flex justify-content-center align-items-center" id="bmi-msg"></p>
                 </div>
-                <button type="submit" class="btn btn-primary">
-                  Calculate BMI
-                </button>
               </form>
               <!-- <div class="mt-4">
                 <h3 id="bmiResult" class="text-center"></h3>
@@ -205,11 +205,11 @@
           </p>
         </div>
       </section>
-      <section class="row row-cols-1 row-cols-lg-3">
+      <section class="row row-cols-1 row-cols-lg-3 m-2 my-2 my-md-4 my-lg-5">
         <div
           class="row row-cols-md-2 row-cols-lg-1 align-items-center align-items-md-start justify-content-start"
         >
-          <div class="d-flex col-2 justify-content-center align-items-center">
+          <div class="d-flex col-2 justify-content-center align-items-center mb-4 mb-xs-0">
             <img src="assests/svg/healthy-svg.svg" height="64" alt="" />
           </div>
           <div>
@@ -223,7 +223,7 @@
         <div
           class="row row-cols-md-2 row-cols-lg-1 align-items-center align-items-md-start justify-content-start"
         >
-          <div class="d-flex col-2 justify-content-center align-items-center">
+          <div class="d-flex col-2 justify-content-center align-items-center mb-4 mb-xs-0">
             <img src="assests/svg/excercise-svg.svg" height="64" alt="" />
           </div>
           <div>
@@ -237,7 +237,7 @@
         <div
           class="row row-cols-md-2 row-cols-lg-1 align-items-center align-items-md-start justify-content-start"
         >
-          <div class="d-flex col-2 justify-content-center align-items-center">
+          <div class="d-flex col-2 justify-content-center align-items-center mb-4 mb-xs-0">
             <img src="assests/svg/sleep-svg.svg" height="64" alt="" />
           </div>
           <div>
@@ -259,14 +259,14 @@
             may not be beneficial to use.
           </p>
         </div>
-        <div class="row row-cols-2">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
           <div class="col p-2">
-            <div class="bmi-card h-100">
+            <div class="bmi-card h-100 gap-4">
               <div class="d-flex align-items-center">
                 <div>
                   <img src="assests/svg/gender-svg.svg" alt="" />
                 </div>
-                <p class="fw-bold">Gender</p>
+                <p class="fw-bold m-0">Gender</p>
               </div>
               <p class="body-md">
                 The development and body fat composition of girls and boys vary
@@ -276,12 +276,12 @@
             </div>
           </div>
           <div class="col p-2">
-            <div class="bmi-card h-100">
-              <div class="d-flex align-items-center">
+            <div class="bmi-card h-100 gap-4">
+              <div class="d-flex align-items-center gap-3">
                 <div>
                   <img src="assests/svg/cake-svg.svg" alt="" />
                 </div>
-                <p class="fw-bold">Age</p>
+                <p class="fw-bold m-0">Age</p>
               </div>
               <p class="body-md">
                 In aging individuals, increased body fat and muscle loss may
@@ -290,12 +290,12 @@
             </div>
           </div>
           <div class="col p-2">
-            <div class="bmi-card h-100">
-              <div class="d-flex align-items-center">
+            <div class="bmi-card h-100 gap-4">
+              <div class="d-flex align-items-center gap-3">
                 <div>
                   <img src="assests/svg/biceps-svg.svg" alt="" />
                 </div>
-                <p class="fw-bold">Muscle</p>
+                <p class="fw-bold m-0">Muscle</p>
               </div>
               <p class="body-md">
                 In aging individuals, increased body fat and muscle loss may
@@ -304,12 +304,12 @@
             </div>
           </div>
           <div class="col p-2">
-            <div class="bmi-card h-100">
-              <div class="d-flex align-items-center">
+            <div class="bmi-card h-100 gap-4">
+              <div class="d-flex align-items-center gap-3">
                 <div>
                   <img src="assests/svg/Pregnancy-svg.svg" alt="" />
                 </div>
-                <p class="fw-bold">Pregnancy</p>
+                <p class="fw-bold m-0">Pregnancy</p>
               </div>
               <p class="body-md">
                 Expectant mothers experience weight gain due to their growing
@@ -319,12 +319,12 @@
             </div>
           </div>
           <div class="col p-2">
-            <div class="bmi-card h-100">
-              <div class="d-flex align-items-center">
+            <div class="bmi-card h-100 gap-4">
+              <div class="d-flex align-items-center gap-3">
                 <div>
                   <img src="assests/svg/Race-svg.svg" alt="" />
                 </div>
-                <p class="fw-bold">Race</p>
+                <p class="fw-bold m-0">Race</p>
               </div>
               <p class="body-md">
                 Certain health concerns may affect individuals of some Black and
