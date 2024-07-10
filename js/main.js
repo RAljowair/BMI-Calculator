@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let bmi;
             let heightMetric;
 
-            if (units === 'imperial') {
+            if (units === 'imperial' ) {
                 const weightStone = parseFloat(document.getElementById('weightStone').value) || 0;
                 const weightPounds = parseFloat(document.getElementById('weightPounds').value) || 0;
                 const heightFeet = parseFloat(document.getElementById('heightFeet').value) || 0;
@@ -51,8 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (totalWeightPounds > 0 && totalHeightInches > 0) {
                     bmi = (totalWeightPounds / (totalHeightInches * totalHeightInches)) * 703;
                 } else {
-                    document.getElementById('bmiResult').textContent = 'Please enter valid weight and height values.';
+                    document.getElementById('bmiResult2').textContent = 'Please enter valid weight and height values.';
                     document.getElementById('bmi-msg').textContent = '';
+                    document.getElementById('bmiResult').textContent =''
                     return;
                 }
             } else {
