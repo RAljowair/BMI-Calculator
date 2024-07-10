@@ -2,11 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "scss/**/*.scss",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "css"
