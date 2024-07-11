@@ -15,6 +15,30 @@ $heading-size-lg: 3rem; // 48px
 $heading-size-md: 1.5rem; // 24px
 $heading-size-sm: 1.25rem; // 20px
 
+$heading-size-xl-xs: 2.5rem;
+$heading-size-xl-sm: 3rem;
+$heading-size-xl-md: 3.5rem;
+$heading-size-xl-lg: 4rem;
+$heading-size-xl-xl: 4.5rem;
+
+$heading-size-lg-xs: 2rem;
+$heading-size-lg-sm: 2.5rem;
+$heading-size-lg-md: 3rem;
+$heading-size-lg-lg: 3.5rem;
+$heading-size-lg-xl: 4rem;
+
+$heading-size-md-xs: 1.5rem;
+$heading-size-md-sm: 1.75rem;
+$heading-size-md-md: 2rem;
+$heading-size-md-lg: 2.25rem;
+$heading-size-md-xl: 2.5rem;
+
+$heading-size-sm-xs: 1.25rem;
+$heading-size-sm-sm: 1.5rem;
+$heading-size-sm-md: 1.75rem;
+$heading-size-sm-lg: 2rem;
+$heading-size-sm-xl: 2.25rem;
+
 // font sizes
 $font-size-lg: 1.25rem; // 20px
 $font-size-base: 1rem; // 16px
@@ -31,27 +55,59 @@ $font-primary-color: #253347;
 $font-secondary-color: #5E6E85;
 
 // defin heading mixin 
-@mixin heading-style($size) {
+@mixin heading-style($size-xs, $size-sm, $size-md, $size-lg, $size-xl) {
     font-weight: $font-semibold;
     letter-spacing: -0.05em;
-    font-size: $size;
-    line-height: $heading-line-height
+    font-size: $size-xs;
+    line-height: $heading-line-height;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $size-sm;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: $size-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: $size-lg;
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: $size-xl;
+    }
 }
 
 .heading-xl {
-    @include heading-style($heading-size-xl);
+    @include heading-style($heading-size-xl-xs,
+        $heading-size-xl-sm,
+        $heading-size-xl-md,
+        $heading-size-xl-lg,
+        $heading-size-xl-xl );
 }
 
 .heading-lg {
-    @include heading-style($heading-size-lg);
+    @include heading-style($heading-size-lg-xs,
+        $heading-size-lg-sm,
+        $heading-size-lg-md,
+        $heading-size-lg-lg,
+        $heading-size-lg-xl );
 }
 
 .heading-md {
-    @include heading-style($heading-size-md);
+    @include heading-style($heading-size-md-xs,
+        $heading-size-md-sm,
+        $heading-size-md-md,
+        $heading-size-md-lg,
+        $heading-size-md-xl );
 }
 
 .heading-sm {
-    @include heading-style($heading-size-sm);
+    @include heading-style($heading-size-sm-xs,
+        $heading-size-sm-sm,
+        $heading-size-sm-md,
+        $heading-size-sm-lg,
+        $heading-size-sm-xl );
 }
 
 @mixin font-body-style($size, $weight) {
@@ -70,4 +126,36 @@ $font-secondary-color: #5E6E85;
 
 .body-sm {
     @include font-body-style($font-size-sm, $font-regular);
+}
+
+@mixin responsive-text-align($xs-align, $sm-align: null, $md-align: null, $lg-align: null, $xl-align: null) {
+    text-align: $xs-align;
+
+    @if $sm-align !=null {
+        @include media-breakpoint-up(sm) {
+            text-align: $sm-align;
+        }
+    }
+
+    @if $md-align !=null {
+        @include media-breakpoint-up(md) {
+            text-align: $md-align;
+        }
+    }
+
+    @if $lg-align !=null {
+        @include media-breakpoint-up(lg) {
+            text-align: $lg-align;
+        }
+    }
+
+    @if $xl-align !=null {
+        @include media-breakpoint-up(xl) {
+            text-align: $xl-align;
+        }
+    }
+}
+
+.custom-text-align {
+    @include responsive-text-align(center, center, left, left, left);
 }
