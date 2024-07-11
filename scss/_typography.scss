@@ -157,5 +157,5 @@ $font-secondary-color: #5E6E85;
 }
 
 .custom-text-align {
-    @include responsive-text-align(center, center, left, left, left);
+    @include responsive-text-align(center, center, center, left, left);
 }
