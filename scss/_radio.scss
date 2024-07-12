@@ -1,0 +1,66 @@
+@import "typography";
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+
+    input[type="radio"] {
+        display: none; // Hide the default radio button
+
+        &+label {
+            position: relative;
+            padding-left: 40px;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 20px;
+            user-select: none;
+            font-weight: $font-medium;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 31px;
+                height: 31px;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                background: #fff;
+                box-sizing: border-box; // Ensure padding doesn't affect size
+            }
+        }
+
+        &:checked+label::before {
+            border: 8px solid #E1E7FE;
+            background: #345FF6; // Change the border color when selected
+        }
+
+        &:checked+label::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 47px; // Adjust to fit the outer border size
+            height: 47px; // Adjust to fit the outer border size
+            border: 8px solid rgba(246, 94, 52, 1); // Outer border color
+            border-radius: 50%;
+            background: transparent;
+            box-sizing: border-box; // Ensure padding doesn't affect size
+            z-index: -1; // Ensure it is behind the inner circle
+        }
+
+        &:checked+label::before::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px; // Adjusted to fit inside the outer circle
+            height: 15px; // Adjusted to fit inside the outer circle
+            border-radius: 50%;
+            background: #345FF6; // Inner circle color
+        }
+    }
+}
